@@ -1,0 +1,179 @@
+#:kivy 2.0
+
+<Calculator>
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+        MDToolbar:
+            title: 'Standard'
+            left_action_items: [['menu',]]
+            right_action_items: [['history',]]
+            size_hint: 1,.13
+            bold: True
+            font_size: 20 
+
+        MDLabel:
+            id: reflection
+            halign: 'right'
+            size_hint: 1,.13
+            font_size: 17 
+
+        MDLabel:
+            id: inputed_number
+            text:'0'
+            font_size: 50
+            halign: 'right'
+            input_filter: 'int'
+            size_hint: 1,.22
+            multiline: False
+
+        GridLayout:
+            cols: 4
+            rows: 6
+            MDRoundFlatButton:
+                text:'%'
+                size_hint:(.2, .2)
+                font_size: 17
+                on_release: root.percentage_sign()
+
+
+            MDRoundFlatButton:
+                text:'CE'
+                size_hint:(.2, .2)
+                font_size: 17
+                on_release: root.clear()
+
+            MDRoundFlatButton:
+                text:'C'
+                size_hint:(.2, .2)
+                font_size: 17
+                on_release: root.clear()
+
+            MDRoundFlatButton:
+                text:'«'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.delete_last_number()
+            MDRoundFlatButton:
+                text:'1/×'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.one_divides_x()
+
+            MDRoundFlatButton:
+                text:'x²'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.square_of_x()
+
+            MDRoundFlatButton:
+                text: '²√×'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.square_root_of_x()
+
+            MDRoundFlatButton:
+                text:'÷' 
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.operation_signs('÷')
+
+            MDRoundFlatButton:
+                text:'7'
+                size_hint:(.2, .2)
+                font_size: 20
+                background_color: 255/255, 151/255, 100/255, 1 
+                on_release: root.button_pressed(7)
+
+            MDRoundFlatButton:
+                text:'8'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(8)
+
+            MDRoundFlatButton:
+                text:'9'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(9)
+
+            MDRoundFlatButton:
+                text:'x'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.operation_signs('x')
+
+            MDRoundFlatButton:
+                text:'4'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(4)
+
+            MDRoundFlatButton:
+                text:'5'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(5)
+
+            MDRoundFlatButton:
+                text:'6'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(6)
+
+            
+            MDRoundFlatButton:
+                text:'-'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.operation_signs('-')
+
+            MDRoundFlatButton:
+                text:'1'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(1)
+
+            MDRoundFlatButton:
+                text:'2'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(2)
+
+            MDRoundFlatButton:
+                text:'3'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed(3)
+
+            MDRoundFlatButton:
+                text:'+'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.operation_signs('+')
+
+            MDRoundFlatButton:
+                text:'±'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.plus_or_minus()
+
+
+            MDRoundFlatButton:
+                text:'0'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.button_pressed('0')
+
+            MDRoundFlatButton:
+                text:'.'
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.decimal_point()
+
+            MDFillRoundFlatButton:
+                text:'='
+                size_hint:(.2, .2)
+                font_size: 20
+                on_release: root.equals_to()
+
