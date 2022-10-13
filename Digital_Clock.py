@@ -6,11 +6,7 @@ master_window.title("Racheal's Digital Clock")
 
 
 def update_clock():
-    hours = time.strftime("%I")
-    mins = time.strftime("%M")
-    secs = time.strftime("%S")
-    am_pm = time.strftime("%p")
-    clock_time = hours + ":" + mins + ":" + secs + ":" + am_pm
+    clock_time = time.strftime('%I:%M:%S %p')
     clock_label.config(text=clock_time)
     clock_label.after(1000, update_clock)
 
